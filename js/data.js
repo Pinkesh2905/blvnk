@@ -28,7 +28,7 @@
       details: ['Engineered mesh upper with bonded TPU overlays', 'Dual-density EVA midsole', 'Rubber outsole with multi-direction tread', 'Reflective heel tab', 'Lace-up closure, padded collar'],
       colors: [
         sn('Blackout', 'Black', '#1b1b1e', '#1b1b1e', '#2b2b30', O, '#121214', '#0a0a0b', '#cfcfd2'),
-        sn('Bone / Orange', 'White', '#e8e3d8', '#e9e4d9', '#cfc8b8', O, '#f4f1ea', '#2a2a2d', '#1b1b1e')
+        sn('Bone / Navy', 'White', '#e8e3d8', '#e9e4d9', '#cfc8b8', O, '#f4f1ea', '#2a2a2d', '#1b1b1e')
       ],
       stock: UK([4, 9, 14, 12, 8, 3])
     },
@@ -60,11 +60,11 @@
       id: 'sn04', slug: 'nocturn', cat: 'sneakers', name: 'NOCTURN', article: 'BLV-SN-004', price: 9999,
       shape: 'chunky', isNew: true, added: '2026-10-30', rank: 2, sold: 96,
       tagline: 'Chunky. Heavy. Impossible to miss.',
-      desc: 'Our biggest midsole yet — a stacked, vented platform with a flared heel. Black on black on orange so it holds its own under streetlights.',
-      details: ['Mixed mesh and nubuck upper', 'Stacked EVA platform midsole with vents', 'Dual-compound rubber outsole', 'Orange glow-line midsole stripe', 'Pull tabs front and rear'],
+      desc: 'Our biggest midsole yet — a stacked, vented platform with a flared heel. Black on black with a white slash so it holds its own under streetlights.',
+      details: ['Mixed mesh and nubuck upper', 'Stacked EVA platform midsole with vents', 'Dual-compound rubber outsole', 'Contrast midsole line', 'Pull tabs front and rear'],
       colors: [
-        sn('Black / Orange', 'Black', '#1b1b1e', '#1b1b1e', '#2a2a2f', O, '#26262a', '#0b0b0c', '#d8d8dc'),
-        sn('Graphite', 'Grey', '#55555b', '#4b4b51', '#66666d', O, '#8a8a90', '#151517', '#e8e6e0')
+        sn('Black', 'Black', '#1b1b1e', '#1b1b1e', '#2a2a2f', O, '#26262a', '#0b0b0c', '#d8d8dc'),
+        sn('Graphite / Red', 'Grey', '#55555b', '#4b4b51', '#66666d', O, '#8a8a90', '#151517', '#e8e6e0')
       ],
       stock: UK([3, 5, 9, 8, 6, 2])
     },
@@ -87,7 +87,7 @@
       desc: 'An archive-inspired trainer with layered panels and an oversize sole unit. Cushioned enough for all-day wear, loud enough for no one to ask what you\'re wearing.',
       details: ['Layered synthetic and mesh upper', 'Oversize EVA sole unit', 'Moulded heel counter', 'Contrast reflective details', 'Lace-up with elastic keeper'],
       colors: [
-        sn('White / Orange', 'White', '#e8e3d8', '#eeeae0', '#d1cabb', O, '#f4f1ea', '#2b2b2f', '#1b1b1e'),
+        sn('White / Blue', 'White', '#e8e3d8', '#eeeae0', '#d1cabb', O, '#f4f1ea', '#2b2b2f', '#1b1b1e'),
         sn('Triple Black', 'Black', '#1b1b1e', '#18181b', '#25252a', '#4a4a50', '#1e1e21', '#0a0a0b', '#2b2b30')
       ],
       stock: UK([2, 4, 7, 6, 5, 3])
@@ -108,8 +108,8 @@
       id: 'sn08', slug: 'static', cat: 'sneakers', name: 'STATIC', article: 'BLV-SN-008', price: 5999, was: 6999,
       shape: 'low', best: true, added: '2026-01-18', rank: 8, sold: 355,
       tagline: 'White, clean, quietly loud.',
-      desc: 'The all-white that stays all-white longer: coated upper that wipes clean, hidden orange insole print, and a tapered toe.',
-      details: ['Coated synthetic leather upper — wipe clean', 'Perforated toe box for airflow', 'Cupsole with stitched sidewall', 'Orange-printed insole', 'Lace-up closure'],
+      desc: 'The all-white that stays all-white longer: coated upper that wipes clean, hidden insole print, and a tapered toe.',
+      details: ['Coated synthetic leather upper — wipe clean', 'Perforated toe box for airflow', 'Cupsole with stitched sidewall', 'Printed insole', 'Lace-up closure'],
       colors: [
         sn('Cloud White', 'White', '#f1efe9', '#f1efe9', '#dedacd', O, '#f7f5f0', '#cfcabc', '#f1efe9'),
         sn('Concrete', 'Grey', '#9a9a9a', '#a3a3a3', '#8a8a8a', '#1b1b1e', '#e8e6e0', '#3a3a3e', '#e8e6e0')
@@ -120,10 +120,10 @@
       id: 'sn09', slug: 'cinder-high', cat: 'sneakers', name: 'CINDER HIGH', article: 'BLV-SN-009', price: 11999,
       shape: 'high', isNew: true, added: '2026-11-04', rank: 9, sold: 38,
       tagline: 'The flagship. Numbered run of 300.',
-      desc: 'Premium full-grain leather, hand-finished edges and a hot-stamped serial on the tongue. Charcoal with an ember-orange slash. Once it\'s gone, it\'s gone.',
+      desc: 'Premium full-grain leather, hand-finished edges and a hot-stamped serial on the tongue. Charcoal with a white slash. Once it\'s gone, it\'s gone.',
       details: ['Full-grain leather upper, hand-burnished edges', 'Hot-stamped serial number on tongue', 'Cushioned Strobel footbed', 'Stitched cupsole with leather welt', 'Comes with a spare set of laces'],
       colors: [
-        sn('Charcoal / Orange', 'Grey', '#3d3d42', '#3c3c41', '#505057', O, '#e8e6e0', '#151517', '#f1efe9'),
+        sn('Charcoal / White', 'Grey', '#3d3d42', '#3c3c41', '#505057', O, '#e8e6e0', '#151517', '#f1efe9'),
         sn('Black', 'Black', '#1b1b1e', '#19191c', '#2a2a2f', O, '#e8e6e0', '#0a0a0b', '#f1efe9')
       ],
       stock: UK([0, 1, 2, 2, 1, 0])
@@ -150,7 +150,7 @@
       desc: 'A structured snapback with a high crown and flat brim. The oversize double slash is embroidered in a raised 3D stitch.',
       details: ['Cotton-poly twill, structured crown', 'Flat brim with dark under-visor', 'Plastic snap closure', '3D raised embroidery', 'Moisture-wicking sweatband'],
       colors: [
-        cp('Black / Orange', 'Black', '#1b1b1e', '#1c1c1f', '#1c1c1f', '#f1efe9', O),
+        cp('Black / White', 'Black', '#1b1b1e', '#1c1c1f', '#1c1c1f', '#f1efe9', O),
         cp('Black / Bone', 'Black', '#2a2a2e', '#1c1c1f', '#e4dfd3', '#f1efe9', '#f1efe9')
       ],
       stock: ONE(34)
@@ -171,11 +171,11 @@
       id: 'cp04', slug: 'ember-dad', cat: 'caps', name: 'EMBER DAD CAP', article: 'BLV-CP-004', price: 1099,
       shape: 'dad', isNew: true, added: '2026-10-28', rank: 3, sold: 82,
       tagline: 'Hi-vis orange. No notes.',
-      desc: 'Core Dad construction in heavy brushed cotton, dyed in our signature orange. Reflective BLVNK stitching on the back.',
+      desc: 'Core Dad construction in heavy brushed cotton, dyed a hi-vis orange. Reflective BLVNK stitching on the back.',
       details: ['Brushed heavyweight cotton', 'Unstructured 6-panel crown', 'Pre-curved brim', 'Reflective back embroidery', 'Adjustable strap'],
       colors: [
         cp('Ember', 'Orange', '#ff5a1f', '#ff5a1f', '#e24a12', '#17171a', '#17171a'),
-        cp('Black / Orange', 'Black', '#1b1b1e', '#1c1c1f', '#17171a', O, '#f1efe9')
+        cp('Black', 'Black', '#1b1b1e', '#1c1c1f', '#17171a', O, '#f1efe9')
       ],
       stock: ONE(26)
     },
@@ -228,10 +228,10 @@
       id: 'cp09', slug: 'tour-5-panel', cat: 'caps', name: 'TOUR 5-PANEL', article: 'BLV-CP-009', price: 2499,
       shape: 'camp', isNew: true, added: '2026-11-06', rank: 8, sold: 29,
       tagline: 'Tour merch. Tour-quality.',
-      desc: 'Heavyweight wool with full-grain leather patch and tonal orange binding. Made in a run of 500.',
-      details: ['Heavyweight wool blend', 'Leather BLVNK patch', 'Orange-bound seams', 'Brass buckle strap', 'Numbered inside the band'],
+      desc: 'Heavyweight wool with full-grain leather patch and white binding. Made in a run of 500.',
+      details: ['Heavyweight wool blend', 'Leather BLVNK patch', 'White-bound seams', 'Brass buckle strap', 'Numbered inside the band'],
       colors: [
-        cp('Black / Orange', 'Black', '#1b1b1e', '#19191c', '#141416', O, '#f1efe9'),
+        cp('Black / White', 'Black', '#1b1b1e', '#19191c', '#141416', O, '#f1efe9'),
         cp('Charcoal', 'Grey', '#3d3d42', '#3b3b40', '#2f2f33', '#f1efe9', O)
       ],
       stock: sizes(['S/M', 'L/XL'], [2, 3])

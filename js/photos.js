@@ -4,146 +4,146 @@
   var PHOTOS = {
   "ash-01": {
     "0": [
-      "img/web/ash-01/0-1.d65bb085"
+      "img/web/ash-01/0-1.03a32519"
     ],
     "1": [
-      "img/web/ash-01/1-1.fae4d213"
+      "img/web/ash-01/1-1.8c3f320f"
     ]
   },
   "cinder-high": {
     "0": [
-      "img/web/cinder-high/0-1.ac6661c1"
+      "img/web/cinder-high/0-1.3833d572"
     ],
     "1": [
-      "img/web/cinder-high/1-1.f03a37b4"
+      "img/web/cinder-high/1-1.66e4c04c"
     ]
   },
   "core-dad": {
     "0": [
-      "img/web/core-dad/0-1.71912524"
+      "img/web/core-dad/0-1.15f52662"
     ],
     "1": [
-      "img/web/core-dad/1-1.2a083fbd"
+      "img/web/core-dad/1-1.248906d2"
     ],
     "2": [
-      "img/web/core-dad/2-1.a3e9d2c3"
+      "img/web/core-dad/2-1.46a6990a"
     ]
   },
   "ember-dad": {
     "0": [
-      "img/web/ember-dad/0-1.1a135b15"
+      "img/web/ember-dad/0-1.99ad80e2"
     ],
     "1": [
-      "img/web/ember-dad/1-1.ca5c49db"
+      "img/web/ember-dad/1-1.13105062"
     ]
   },
   "field-mid": {
     "0": [
-      "img/web/field-mid/0-1.2d11d75b"
+      "img/web/field-mid/0-1.8e0f3af1"
     ],
     "1": [
-      "img/web/field-mid/1-1.8f1a4f1f"
+      "img/web/field-mid/1-1.6ed857e9"
     ]
   },
   "kiln-low": {
     "0": [
-      "img/web/kiln-low/0-1.d243ed41"
+      "img/web/kiln-low/0-1.e6ad893d"
     ],
     "1": [
-      "img/web/kiln-low/1-1.59711f5a"
+      "img/web/kiln-low/1-1.602dc3ed"
     ]
   },
   "mono-5-panel": {
     "0": [
-      "img/web/mono-5-panel/0-1.c877eb90"
+      "img/web/mono-5-panel/0-1.03a2d90c"
     ],
     "1": [
-      "img/web/mono-5-panel/1-1.420978a6"
+      "img/web/mono-5-panel/1-1.9935cbf7"
     ]
   },
   "nocturn": {
     "0": [
-      "img/web/nocturn/0-1.78d5acdc"
+      "img/web/nocturn/0-1.3db1e2c1"
     ],
     "1": [
-      "img/web/nocturn/1-1.05e938f9"
+      "img/web/nocturn/1-1.ccf5d344"
     ]
   },
   "noir-snapback": {
     "0": [
-      "img/web/noir-snapback/0-1.07220441"
+      "img/web/noir-snapback/0-1.9eed40f8"
     ]
   },
   "orbit-dad": {
     "0": [
-      "img/web/orbit-dad/0-1.77b49d65"
+      "img/web/orbit-dad/0-1.bb7393c8"
     ],
     "1": [
-      "img/web/orbit-dad/1-1.1253c0c2"
+      "img/web/orbit-dad/1-1.c22ad70c"
     ]
   },
   "riot-95": {
     "0": [
-      "img/web/riot-95/0-1.7f83b850"
+      "img/web/riot-95/0-1.f9efc092"
     ],
     "1": [
-      "img/web/riot-95/1-1.474e9350"
+      "img/web/riot-95/1-1.178b3098"
     ]
   },
   "sand-camper": {
     "0": [
-      "img/web/sand-camper/0-1.e313e895"
+      "img/web/sand-camper/0-1.0de86c45"
     ],
     "1": [
-      "img/web/sand-camper/1-1.284b2470"
+      "img/web/sand-camper/1-1.c907e98e"
     ]
   },
   "slab-high": {
     "0": [
-      "img/web/slab-high/0-1.77239d95"
+      "img/web/slab-high/0-1.174fcd34"
     ],
     "1": [
-      "img/web/slab-high/1-1.76b81649"
+      "img/web/slab-high/1-1.6f46ea39"
     ]
   },
   "slash-snapback": {
     "0": [
-      "img/web/slash-snapback/0-1.4714f72b"
+      "img/web/slash-snapback/0-1.18618011"
     ],
     "1": [
-      "img/web/slash-snapback/1-1.940a340c"
+      "img/web/slash-snapback/1-1.f97e0fbb"
     ]
   },
   "stack-snapback": {
     "0": [
-      "img/web/stack-snapback/0-1.931a2b91"
+      "img/web/stack-snapback/0-1.45029371"
     ],
     "1": [
-      "img/web/stack-snapback/1-1.d68a7680"
+      "img/web/stack-snapback/1-1.820c042f"
     ]
   },
   "static": {
     "0": [
-      "img/web/static/0-1.c0d4d805"
+      "img/web/static/0-1.acfa4c5a"
     ],
     "1": [
-      "img/web/static/1-1.4cf9c793"
+      "img/web/static/1-1.4fd0ee64"
     ]
   },
   "tour-5-panel": {
     "0": [
-      "img/web/tour-5-panel/0-1.cf42bbcb"
+      "img/web/tour-5-panel/0-1.96b9d70e"
     ],
     "1": [
-      "img/web/tour-5-panel/1-1.5040718f"
+      "img/web/tour-5-panel/1-1.e065ab8d"
     ]
   },
   "void-runner": {
     "0": [
-      "img/web/void-runner/0-1.15e0aef8"
+      "img/web/void-runner/0-1.b348bd55"
     ],
     "1": [
-      "img/web/void-runner/1-1.f4d0f53a"
+      "img/web/void-runner/1-1.d5a5bf25"
     ]
   }
 };
