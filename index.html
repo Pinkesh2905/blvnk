@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BLVNK — Sneakers & Caps. Not made to blend in.</title>
+<meta name="description" content="BLVNK is a niche streetwear label making only sneakers and caps. Shop the FW26 drop — UPI, cards and cash on delivery across India.">
+<meta name="theme-color" content="#0b0b0c">
+<meta property="og:title" content="BLVNK — NOT MADE TO BLEND IN.">
+<meta property="og:description" content="Sneakers and caps. Nothing else.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Cpolygon points='14,50 26,50 42,14 30,14' fill='%23f4f2ee'/%3E%3Cpolygon points='32,50 38,50 54,14 48,14' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+
+<!-- icon sprite: one 24px grid, 1.75 stroke, square caps -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5S4 15.6 4 9.6A4.6 4.6 0 0 1 12 6.8a4.6 4.6 0 0 1 8 2.8c0 6-8 10.9-8 10.9Z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-6.5 8-6.5s8 2.300 8 6.500"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M4.500 8h15l-1.100 13H5.600L4.500 8Z"/><path d="M8.500 8V6.500a3.500 3.500 0 0 1 7 0V8"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M10 18h4"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="4.500"/><circle cx="12" cy="12" r="4"/><path d="M17.300 6.700h.01"/></symbol>
+  <symbol id="i-xsoc" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.500" y="5.500" width="19" height="13" rx="3.500"/><path d="M10 9.500v5l4.500-2.500z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.500 11 12 4l8.500 7M5.500 9.500V20h13V9.500M10 20v-5.500h4V20"/></symbol>
+  <symbol id="i-sneaker" viewBox="0 0 24 24"><path d="M2.500 16.500V11l4-.800 2.200-3.500 3 2.200 2.500-1 4.300 3.800 3 1.300v3.500z"/><path d="M2.500 19.500h19M9 11l1.500 1.500M11.500 9.800 13 11.300"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M4.500 15.500a7.500 7.500 0 0 1 15 0"/><path d="M3 15.500h13.500c2.500 0 4.500 1 4.500 3H8.500z"/><path d="M12 8V6.500"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.500 9.500 18 20 6.500"/></symbol>
+</svg>
+
+<header class="site-head" id="head">
+  <div class="ticker" aria-label="Store announcements"><div class="ticker-track" id="ticker"></div></div>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="logo" href="#/" aria-label="BLVNK home">BL<i>V</i>NK</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#/" data-nav="home">Home</a>
+        <a href="#/sneakers" data-nav="sneakers">Sneakers</a>
+        <a href="#/caps" data-nav="caps">Caps</a>
+        <a href="#/new" data-nav="new">New Arrivals</a>
+      </div>
+      <div class="nav-tools">
+        <a class="nav-new" href="#/new" data-nav="new">New in</a>
+        <button class="tool" id="search-btn" aria-label="Search" aria-expanded="false" aria-controls="search-panel"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="lbl">Search</span></button>
+        <a class="tool" href="#/wishlist" aria-label="Wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span class="lbl">Wishlist</span><span class="badge" id="wish-n" data-n="0" aria-live="polite">0</span></a>
+        <a class="tool" href="#/account" aria-label="Account"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span class="lbl">Account</span></a>
+        <button class="tool" id="cart-btn" aria-label="Cart" aria-controls="cart-drawer"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span class="lbl">Cart</span><span class="badge" id="cart-n" data-n="0" aria-live="polite">0</span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="search-panel" id="search-panel" hidden role="search">
+    <div class="wrap">
+      <form class="search-box" id="search-form" autocomplete="off">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="search-input" type="search" name="q" placeholder="Search sneakers & caps" aria-label="Search products" enterkeyhint="search" spellcheck="false">
+        <button type="button" class="x-btn" id="search-close" aria-label="Close search"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </form>
+      <div class="search-hints" id="search-hints"></div>
+      <div class="search-res" id="search-res" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="#/">BL<i>V</i>NK</a>
+        <p>Sneakers and caps. Nothing else. Not made to blend in.</p>
+        <form class="news" id="news-form" novalidate>
+          <label class="sr" for="news-email">Email for drop alerts</label>
+          <input class="input" id="news-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="Email for drop alerts">
+          <button class="btn btn-light btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+      <div><h2>Shop</h2><ul>
+        <li><a href="#/sneakers">Sneakers</a></li><li><a href="#/caps">Caps</a></li><li><a href="#/new">New Arrivals</a></li><li><a href="#/wishlist">Wishlist</a></li></ul></div>
+      <div><h2>Help</h2><ul>
+        <li><a href="#/page/shipping">Shipping</a></li><li><a href="#/page/returns">Returns</a></li><li><a href="#/page/contact">Contact</a></li><li><a href="#/account">Track an order</a></li></ul></div>
+      <div><h2>BLVNK</h2><ul>
+        <li><a href="#/page/about">About</a></li><li><a href="#/page/privacy">Privacy Policy</a></li></ul>
+        <div class="social" style="margin-top:18px">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="BLVNK on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg></a>
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="BLVNK on X"><svg class="icon" aria-hidden="true"><use href="#i-xsoc"/></svg></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="BLVNK on YouTube"><svg class="icon" aria-hidden="true"><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom"><div class="wrap"><span>© 2026 BLVNK. All prices in INR, incl. GST.</span><span>UPI · Cards · Cash on delivery</span></div></div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head"><h2 class="display">Cart</h2><button class="x-btn" data-close aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <div class="drawer-body" id="cart-body"></div>
+  <div class="drawer-foot" id="cart-foot"></div>
+</aside>
+
+<nav class="tabbar" id="tabbar" aria-label="Quick navigation">
+  <a href="#/" data-tab="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></a>
+  <a href="#/sneakers" data-tab="sneakers"><svg class="icon" aria-hidden="true"><use href="#i-sneaker"/></svg><span>Sneakers</span></a>
+  <a href="#/caps" data-tab="caps"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg><span>Caps</span></a>
+  <button type="button" id="tab-search" aria-controls="search-panel" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span></button>
+  <a href="#/wishlist" data-tab="wishlist" aria-label="Wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>Wishlist</span><b class="badge" id="tab-wish-n" data-n="0">0</b></a>
+  <button type="button" id="tab-cart" aria-controls="cart-drawer"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span>Cart</span><b class="badge" id="tab-cart-n" data-n="0">0</b></button>
+</nav>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true"></div>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/art.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/pages2.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

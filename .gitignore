@@ -1,0 +1,12 @@
+# local tooling / editor state
+.claude/
+node_modules/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# full-size originals stay on disk; the site only uses the web copies in img/web/
+# (re-run `python tools/build-photos.py` after adding originals to img/products/)
+img/products/
+img/*.png
+img/*.jpg
