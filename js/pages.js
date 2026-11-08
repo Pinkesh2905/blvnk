@@ -8,7 +8,7 @@
 
   /* =============== HOME =============== */
   P.home = function () {
-    const hero = S.bySlug('nocturn');
+    const hero = S.bySlug('slab-high');
     const news = S.products.filter(p => p.isNew).sort((a, b) => b.added.localeCompare(a.added)).slice(0, 4);
     const best = S.products.filter(p => p.best).sort((a, b) => b.sold - a.sold).slice(0, 4);
     const nS = S.products.filter(p => p.cat === 'sneakers').length, nC = S.products.filter(p => p.cat === 'caps').length;
@@ -26,8 +26,8 @@
       <div class="cta"><a class="btn btn-primary" href="#/sneakers">Shop Sneakers ${icon('arrow')}</a><a class="btn btn-ghost" href="#/caps">Shop Caps</a></div>
     </div>
     <div class="hero-media">
-      <img ${UI.imgAttrs(hero, 0, 'p0', '(max-width: 900px) 100vw, 46vw')} alt="${esc(hero.name)} sneaker in black and orange" width="800" height="800" fetchpriority="high">
-      <a class="hang" href="${href(hero)}"><span class="mono">${hero.article} · New</span><b>${esc(hero.name)}</b><span class="mono">${inr(hero.price)} →</span></a>
+      <img ${UI.imgAttrs(hero, 0, 'p0', '(max-width: 900px) 100vw, 46vw')} alt="${esc(hero.name)} sneaker in black" width="800" height="800" fetchpriority="high">
+      <a class="hang" href="${href(hero)}"><span class="mono">${hero.article}${hero.isNew ? ' · New' : ''}</span><b>${esc(hero.name)}</b><span class="mono">${inr(hero.price)} →</span></a>
     </div>
   </div>
   <div class="facts"><div class="wrap">
@@ -38,11 +38,13 @@
   </div></div>
 </section>
 
+<div class="strip" aria-hidden="true"><div class="strip-track">${Array(8).fill('<span>Not made to blend in</span>').join('')}</div></div>
+
 <section class="section wrap" aria-labelledby="cat-h">
   <div class="section-head"><h2 class="display h-sec" id="cat-h">Shop by category</h2><a class="link label" href="#/shop">All ${nS + nC} products</a></div>
   <div class="cat-tiles">
-    <a class="tile" href="#/sneakers"><img ${tileImg('sn06', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Sneakers</h3><p class="label">${nS} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'sneakers').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
-    <a class="tile" href="#/caps"><img ${tileImg('cp04', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Caps</h3><p class="label">${nC} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'caps').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
+    <a class="tile" href="#/sneakers"><img ${tileImg('sn03', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Sneakers</h3><p class="label">${nS} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'sneakers').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
+    <a class="tile" href="#/caps"><img ${tileImg('cp01', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Caps</h3><p class="label">${nC} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'caps').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
   </div>
 </section>
 
@@ -62,7 +64,7 @@
       <p class="label" style="margin-bottom:18px">About the label</p>
       <h2 class="display" id="brand-h">Two products.<br>No filler.</h2>
       <p>BLVNK makes sneakers and caps — and only sneakers and caps. No tees, no hoodies, no accessories to pad out a catalogue. Every drop is small, numbered and finished like the only thing we made.</p>
-      <p><b>The V is the point.</b> BLVNK is a blank that refuses to stay blank: black and charcoal bases, one hit of hazard orange, and a double slash you’ll recognise from across the street.</p>
+      <p><b>The V is the point.</b> BLVNK is a blank that refuses to stay blank: black and charcoal bases, white strips, and a double slash you’ll recognise from across the street.</p>
       <p style="margin-top:28px"><a class="btn btn-ghost" href="#/page/about">Read our story</a></p>
     </div>
     <div class="carton" aria-label="BLVNK carton label">
