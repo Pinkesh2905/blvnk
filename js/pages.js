@@ -12,7 +12,7 @@
     const news = S.products.filter(p => p.isNew).sort((a, b) => b.added.localeCompare(a.added)).slice(0, 4);
     const best = S.products.filter(p => p.best).sort((a, b) => b.sold - a.sold).slice(0, 4);
     const nS = S.products.filter(p => p.cat === 'sneakers').length, nC = S.products.filter(p => p.cat === 'caps').length;
-    const tileImg = (id, ci, view) => Art.src(S.byId(id), ci, view);
+    const tileImg = (id, ci, view) => UI.imgAttrs(S.byId(id), ci, view, '(max-width: 720px) 100vw, 50vw', 720);
     return {
       title: 'BLVNK — Sneakers & Caps. Not made to blend in.',
       nav: 'home',
@@ -26,7 +26,7 @@
       <div class="cta"><a class="btn btn-primary" href="#/sneakers">Shop Sneakers ${icon('arrow')}</a><a class="btn btn-ghost" href="#/caps">Shop Caps</a></div>
     </div>
     <div class="hero-media">
-      <img src="${Art.src(hero, 0, 'side')}" alt="${esc(hero.name)} sneaker in black and orange" width="800" height="800" fetchpriority="high">
+      <img ${UI.imgAttrs(hero, 0, 'p0', '(max-width: 900px) 100vw, 46vw')} alt="${esc(hero.name)} sneaker in black and orange" width="800" height="800" fetchpriority="high">
       <a class="hang" href="${href(hero)}"><span class="mono">${hero.article} · New</span><b>${esc(hero.name)}</b><span class="mono">${inr(hero.price)} →</span></a>
     </div>
   </div>
@@ -41,8 +41,8 @@
 <section class="section wrap" aria-labelledby="cat-h">
   <div class="section-head"><h2 class="display h-sec" id="cat-h">Shop by category</h2><a class="link label" href="#/shop">All ${nS + nC} products</a></div>
   <div class="cat-tiles">
-    <a class="tile" href="#/sneakers"><img src="${tileImg('sn06', 0, 'side')}" alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Sneakers</h3><p class="label">${nS} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'sneakers').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
-    <a class="tile" href="#/caps"><img src="${tileImg('cp04', 0, 'front')}" alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Caps</h3><p class="label">${nC} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'caps').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
+    <a class="tile" href="#/sneakers"><img ${tileImg('sn06', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Sneakers</h3><p class="label">${nS} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'sneakers').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
+    <a class="tile" href="#/caps"><img ${tileImg('cp04', 0, 'p0')} alt="" loading="lazy" width="800" height="800"><div><h3 class="display">Caps</h3><p class="label">${nC} styles from ${inr(Math.min(...S.products.filter(p => p.cat === 'caps').map(p => p.price)))}</p></div><span class="arrow">${icon('arrow')}</span></a>
   </div>
 </section>
 
@@ -262,15 +262,15 @@
     const view = () => {
       const c = p.colors[state.ci], max = state.size ? p.stock[state.size] : 0;
       views = Art.views(p, state.ci); state.vi = Math.min(state.vi, views.length - 1);
-      const stage = Art.src(p, state.ci, views[state.vi].key), multi = views.length > 1;
+      const stageAttrs = UI.imgAttrs(p, state.ci, views[state.vi].key, '(max-width: 900px) 100vw, 56vw', 1200), multi = views.length > 1;
       const note = !state.size ? '' : (max <= 3 ? `Only ${max} left in this size` : 'In stock — ships in 24 hours');
       return `
 <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:22px"><a href="#/">Home</a><i>/</i><a href="#/${p.cat}">${p.cat === 'sneakers' ? 'Sneakers' : 'Caps'}</a><i>/</i><span aria-current="page">${esc(p.name)}</span></nav>
 <div class="pdp">
   <div class="gallery${multi ? '' : ' single'}" aria-label="Product images">
-    ${multi ? '<div class="thumbs">' : '<div class="thumbs" hidden>'}${views.map((v, i) => `<button class="thumb" data-vi="${i}" aria-current="${i === state.vi}" aria-label="${v.label} view"><img src="${Art.src(p, state.ci, v.key)}" alt="" width="84" height="84" loading="lazy"></button>`).join('')}</div>
+    ${multi ? '<div class="thumbs">' : '<div class="thumbs" hidden>'}${views.map((v, i) => `<button class="thumb" data-vi="${i}" aria-current="${i === state.vi}" aria-label="${v.label} view"><img src="${Art.src(p, state.ci, v.key, 360)}" alt="" width="84" height="84" loading="lazy" decoding="async"></button>`).join('')}</div>
     <div class="stage" id="stage" tabindex="0" aria-roledescription="carousel" aria-label="${esc(p.name)} — ${views[state.vi].label} view, image ${state.vi + 1} of ${views.length}">
-      <img src="${stage}" alt="${esc(p.name)} in ${esc(c.name)}, ${views[state.vi].label.toLowerCase()} view" width="800" height="800" fetchpriority="high">
+      <img ${stageAttrs} alt="${esc(p.name)} in ${esc(c.name)}, ${views[state.vi].label.toLowerCase()} view" width="800" height="800" fetchpriority="high">
       ${tagsHTML(p)}
       ${multi ? `<button class="nav-arrow prev" data-step="-1" aria-label="Previous image">${icon('left')}</button><button class="nav-arrow next" data-step="1" aria-label="Next image">${icon('right')}</button>
       <span class="count">${String(state.vi + 1).padStart(2, '0')} / ${String(views.length).padStart(2, '0')}</span>` : ''}

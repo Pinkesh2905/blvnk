@@ -46,13 +46,20 @@
   }
   const wishBtn = p => `<button class="wish" data-act="wish" data-id="${p.id}" aria-pressed="${S.isWished(p.id)}" aria-label="${S.isWished(p.id) ? 'Remove' : 'Add'} ${esc(p.name)} ${S.isWished(p.id) ? 'from' : 'to'} wishlist">${icon('heart')}</button>`;
 
+  /* src + srcset + sizes for a product image; photos get three WebP widths, renders get a data URI */
+  const CARD_SIZES = '(max-width: 1280px) 50vw, 25vw';
+  const imgAttrs = (p, ci, key, sizes, w) => {
+    const ss = Art.srcset(p, ci, key);
+    return `src="${Art.src(p, ci, key, w)}"` + (ss ? ` srcset="${ss}" sizes="${sizes}"` : '');
+  };
+
   function cardHTML(p) {
     const sold = S.status(p) === 'sold', vs = Art.views(p);
     const dots = p.colors.length > 1 ? `<div class="dots" role="group" aria-label="Colours">${p.colors.map((c, i) => `<button class="sw sm" style="--c:${c.swatch}" data-act="card-color" data-id="${p.id}" data-ci="${i}" aria-pressed="${i === 0}" aria-label="${esc(c.name)}"></button>`).join('')}</div>` : '';
     return `<article class="card${sold ? ' is-sold' : ''}" data-id="${p.id}">
   <a class="card-media" href="${href(p)}" tabindex="-1" aria-hidden="true">
-    <img src="${Art.src(p, 0, vs[0].key)}" alt="" width="800" height="800" loading="lazy" decoding="async">
-    ${vs.length > 1 ? `<img class="alt" src="${Art.src(p, 0, vs[1].key)}" alt="" width="800" height="800" loading="lazy" decoding="async">` : ''}
+    <img ${imgAttrs(p, 0, vs[0].key, CARD_SIZES)} alt="" width="800" height="800" loading="lazy" decoding="async">
+    ${vs.length > 1 ? `<img class="alt" ${imgAttrs(p, 0, vs[1].key, CARD_SIZES)} alt="" width="800" height="800" loading="lazy" decoding="async">` : ''}
   </a>
   ${tagsHTML(p)}
   ${wishBtn(p)}
@@ -141,7 +148,7 @@
     const draw = () => {
       const c = p.colors[sel.ci];
       modal.innerHTML = modalHead('Quick add') + `<div class="modal-body">
-<div class="qa-prod"><img src="${Art.src(p, sel.ci, Art.views(p)[0].key)}" alt="" width="96" height="96"><div><div class="label">${p.article}</div><h3 class="display" style="font-size:22px;margin:4px 0 8px">${esc(p.name)}</h3>${priceHTML(p)}</div></div>
+<div class="qa-prod"><img src="${Art.src(p, sel.ci, 'p0', 360)}" alt="" width="96" height="96"><div><div class="label">${p.article}</div><h3 class="display" style="font-size:22px;margin:4px 0 8px">${esc(p.name)}</h3>${priceHTML(p)}</div></div>
 ${p.colors.length > 1 ? `<div><div class="opt-head"><span class="label">Colour — <b>${esc(c.name)}</b></span></div><div class="dots" style="gap:18px;padding:4px">${p.colors.map((x, i) => `<button class="sw" style="--c:${x.swatch}" data-qa-color="${i}" aria-pressed="${i === sel.ci}" aria-label="${esc(x.name)}"></button>`).join('')}</div></div>` : ''}
 <div><div class="opt-head"><span class="label">${p.cat === 'sneakers' ? 'Size (UK)' : 'Size'}</span><button type="button" data-qa-guide>Size guide</button></div>
 <div class="sizes" role="group" aria-label="Size">${sizeKeys.map(k => `<button class="size" data-qa-size="${esc(k)}" aria-pressed="${sel.size === k}" ${p.stock[k] ? '' : 'disabled aria-label="' + esc(k) + ' sold out"'}>${esc(k)}</button>`).join('')}</div>
@@ -175,7 +182,7 @@ ${p.colors.length > 1 ? `<div><div class="opt-head"><span class="label">Colour �
   function lineHTML(l, i) {
     const p = S.byId(l.pid), c = p.colors[l.ci], max = S.sizeStock(p, l.size);
     return `<li class="line" data-i="${i}">
-  <a href="${href(p, l.ci)}" data-close><img src="${Art.src(p, l.ci, Art.views(p)[0].key)}" alt="" width="84" height="84"></a>
+  <a href="${href(p, l.ci)}" data-close><img src="${Art.src(p, l.ci, 'p0', 360)}" alt="" width="84" height="84" loading="lazy"></a>
   <div class="info"><h3><a href="${href(p, l.ci)}" data-close>${esc(p.name)}</a></h3>
     <div class="var">${esc(c.name)} · ${p.cat === 'sneakers' ? 'UK ' : ''}${esc(l.size)}</div>
     <div class="price tab-nums">${inr(p.price * l.qty)}</div>
@@ -230,10 +237,15 @@ ${p.colors.length > 1 ? `<div><div class="opt-head"><span class="label">Colour �
     else if (act === 'card-color') {
       const p = S.byId(b.dataset.id), ci = +b.dataset.ci, card = b.closest('.card'), vs = Art.views(p, ci);
       let imgs = $$('.card-media img', card);
-      imgs[0].src = Art.src(p, ci, 'p0');
+      const setImg = (el, key) => {
+        const ss = Art.srcset(p, ci, key);
+        el.src = Art.src(p, ci, key);
+        if (ss) { el.srcset = ss; el.sizes = CARD_SIZES; } else { el.removeAttribute('srcset'); el.removeAttribute('sizes'); }
+      };
+      setImg(imgs[0], 'p0');
       if (vs.length > 1) {
         if (!imgs[1]) { const a = imgs[0].cloneNode(); a.className = 'alt'; imgs[0].after(a); imgs = $$('.card-media img', card); }
-        imgs[1].src = Art.src(p, ci, 'p1');
+        setImg(imgs[1], 'p1');
       } else if (imgs[1]) imgs[1].remove();
       $$('[data-act="card-color"]', card).forEach(x => x.setAttribute('aria-pressed', x === b));
       $$('a', card).forEach(a => { if (a.getAttribute('href').startsWith('#/product/')) a.href = href(p, ci); });
@@ -280,7 +292,7 @@ ${p.colors.length > 1 ? `<div><div class="opt-head"><span class="label">Colour �
     const q = sInput.value, res = search(q), box = $('#search-res');
     if (!q.trim()) { box.innerHTML = ''; return; }
     if (!res.length) { box.innerHTML = `<p class="muted" style="padding:24px 0">No match for “${esc(q)}”. Try “black”, “high top” or “snapback”.</p>`; return; }
-    box.innerHTML = res.slice(0, 6).map(p => `<a class="s-row" href="${href(p)}"><img src="${Art.src(p, 0, Art.views(p)[0].key)}" alt="" width="64" height="64"><div><b>${esc(p.name)}</b><small>${p.article} · ${p.cat}</small></div><span class="price">${inr(p.price)}</span></a>`).join('') +
+    box.innerHTML = res.slice(0, 6).map(p => `<a class="s-row" href="${href(p)}"><img src="${Art.src(p, 0, 'p0', 360)}" alt="" width="64" height="64"><div><b>${esc(p.name)}</b><small>${p.article} · ${p.cat}</small></div><span class="price">${inr(p.price)}</span></a>`).join('') +
       (res.length > 6 ? `<a class="s-row" href="#/search?q=${encodeURIComponent(q)}" style="grid-template-columns:1fr auto"><b class="label" style="color:var(--ink)">See all ${res.length} results</b>${icon('arrow')}</a>` : '');
   }
   function openSearch() {
@@ -318,5 +330,5 @@ ${p.colors.length > 1 ? `<div><div class="opt-head"><span class="label">Colour �
     toast('You\'re on the list. Next drop, first.'); i.value = '';
   });
 
-  window.UI = { openEl, $, $$, esc, icon, inr, cardHTML, priceHTML, tagsHTML, href, off, toast, openModal, closeLayer, sizeGuide, quickAdd, addAndOpen, openCart, lineHTML, shipBar, cartAction, barcode, FAMILY_HEX, FAMILIES, closeSearch, syncChrome };
+  window.UI = { imgAttrs, openEl, $, $$, esc, icon, inr, cardHTML, priceHTML, tagsHTML, href, off, toast, openModal, closeLayer, sizeGuide, quickAdd, addAndOpen, openCart, lineHTML, shipBar, cartAction, barcode, FAMILY_HEX, FAMILIES, closeSearch, syncChrome };
 })();

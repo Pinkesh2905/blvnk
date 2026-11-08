@@ -26,7 +26,9 @@ To add real photos:
 1. Generate or shoot them. `PHOTO-PROMPTS.md` has a ChatGPT prompt for each of the 36 colourways.
 2. Save them as `img/products/<product-slug>/<colour-index>-<shot>.png` (or jpg/webp), e.g. `img/products/void-runner/0-1.png`.
    Shot 1 is the main image; shots 2–4 fill the gallery. Colour indexes are in `PHOTO-PROMPTS.md`.
-3. Run `python tools/build-photos.py`. It writes `js/photos.js` (and 1200px web JPEGs to `img/web/` if Pillow is installed).
+3. Run `python tools/build-photos.py` (needs `pip install pillow`). It writes `js/photos.js` and three WebP sizes per photo
+   (360 / 720 / 1200 px, content-hashed file names) to `img/web/`. The site serves the right size per screen via `srcset`,
+   and the hashed names let Vercel cache them forever.
 4. Refresh. One photo shows full-size; 2–4 show a gallery; colours without photos keep the renders.
 
 ## Deploy
